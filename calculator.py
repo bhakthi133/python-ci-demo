@@ -14,8 +14,8 @@ def square(n1):
 def power(n1,n2):
     return n1**n2
 
-n1=int(input("Enter first number: "))
-n2=int(input("Enter second number: "))
+n1=int(input("Enter 1st number: "))
+n2=int(input("Enter 2nd number: "))
 opp=input("Enter operation: ")
 if(opp == "add"):
     res=add(n1,n2)
