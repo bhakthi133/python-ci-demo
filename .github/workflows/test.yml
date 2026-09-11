@@ -1,0 +1,15 @@
+name : Test Calculator
+on:
+  push:
+  pull_request:
+
+  runs-on: ubuntu-latest
+  steps:
+        -name: Load code
+         uses: actions/checkout@V4
+        -name: Set Python
+         uses: actions/setup-python@V5
+        -name: Pytest run
+         runs: pip install pytest
+        -name: Run tests
+         runs: pytest
