@@ -12,6 +12,6 @@ def div(n1,n2):
 def square(n1):
     return n1**2
 def power(n1,n2):
-    return n1**n2*2
+    return n1**n2
 
 
