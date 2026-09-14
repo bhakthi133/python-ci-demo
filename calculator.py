@@ -6,7 +6,7 @@ def mul(n1,n2):
     return n1*n2
 def div(n1,n2):
     if(n2==0):
-        return "invalid divission"
+        return "invalid division"
     else:
         return n1/n2
 def square(n1):
