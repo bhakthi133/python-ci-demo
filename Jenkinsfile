@@ -11,6 +11,8 @@ pipeline {
 
         stage('Set Python') {
             steps {
+                bat 'echo %PATH%'
+                bat 'where python'
                 bat 'python --version'
             }
         }
