@@ -6,7 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Load code
+      - name: Load code from repository
         uses: actions/checkout@v4
       - name: Set Python
         uses: actions/setup-python@v5
