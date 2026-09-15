@@ -1,12 +1,5 @@
 pipeline {
     agent any
-    parameters{
-        choice(
-            name: 'test_type',
-            choices: ['all','calculator'],
-            description: "Select the type of tests to run"
-        )
-    }
     environment {
         PATH = "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312;${env.PATH}"
     }
