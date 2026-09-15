@@ -6,11 +6,12 @@ pipeline{
                 checkout scm
             }
         }
-        stage('Set python'){
-            steps{
+        stage('Set Python') {
+            steps {
+                bat 'where python'
                 bat 'python --version'
             }
-        }
+}
         stage('Install pytest'){
             steps{
                 bat 'pip install pytest'
