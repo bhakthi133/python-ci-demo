@@ -3,7 +3,7 @@ pipeline {
     parameters{
         choice(
             name: 'test_type',
-            choices: ['all','calculator']
+            choices: ['all','calculator'],
             description: "Select the type of tests to run"
         )
     }
