@@ -25,7 +25,7 @@ pipeline {
             }
         }
 
-        stage('Install pytest') {
+        stage('Install pytest dependency library') {
             steps {
                 bat 'python -m pip install pytest'
             }
