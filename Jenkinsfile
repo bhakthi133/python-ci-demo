@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312;${env.PATH}"
+    }
+
     stages {
 
         stage('Load code') {
@@ -11,21 +15,19 @@ pipeline {
 
         stage('Set Python') {
             steps {
-                bat 'echo %PATH%'
-                bat 'where python'
                 bat 'python --version'
             }
         }
 
         stage('Install pytest') {
             steps {
-                bat 'pip install pytest'
+                bat 'python -m pip install pytest'
             }
         }
 
         stage('Run test') {
             steps {
-                bat 'pytest'
+                bat 'python -m pytest'
             }
         }
     }
