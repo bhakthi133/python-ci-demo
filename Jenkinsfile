@@ -8,7 +8,7 @@ pipeline {
 
         stage('Load code') {
             steps {
-                checkout scm
+                checkout scm   
             }
         }
 
