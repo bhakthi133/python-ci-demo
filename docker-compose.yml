@@ -10,8 +10,8 @@ services:
     networks: 
       - my_network
     command: python calculator.py
-Volumes:
+volumes:
   cal_val:
-Networks:
+networks:
   my_networks:
 
