@@ -13,5 +13,5 @@ services:
 volumes:
   cal_val:
 networks:
-  my_networks:
+  my_network:
 
