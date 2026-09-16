@@ -15,6 +15,6 @@ jobs:
       - name: Pytest run
         run: pip install pytest
       - name: Build Docker image
-        run: docker build -t image_cal
+        run: docker build -t image_cal .
       - name: Run tests
         run: pytest
