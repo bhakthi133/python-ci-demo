@@ -29,7 +29,29 @@ pipeline {
                 bat 'python -m pytest'
             }
         }
-    }
+        stage('Build image of docker') {
+            steps{
+                bat 'docker build -t image_jenkins .'
+            }
+        }
+        stage('Docker login'){
+            steps{
+                withCredentials([usernamePassword(
+                    credentialsId: 'docker-cred',
+                    usernameVariable: 'DOCKER_USERNAME',
+                    passwordVariable: 'DOCKER_PASSWORD'
+                )]){
+                    bat 'docker login -u %DOCKER_USERNAME% -p %DOCKER_PASWORD%'
+                }
+            }
+        }
+        stage('Push image'){
+            steps{
+                bat 'docker tag image_jenkins bhakthisp/image_jenkins:latest'
+                bat 'docker push bhakthisp/image_jenkins:latest'
+            }
+        }} 
+           }
     post {
     success {
         echo 'Build successful!'
