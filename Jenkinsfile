@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PATH = "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312;${env.PATH}"
+    PATH = "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312;C:\\Users\\Admin\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin;${env.PATH}"
     }
 
     stages {
@@ -29,7 +29,7 @@ pipeline {
                 bat 'python -m pytest'
             }
         }
-        
+
         stage('Build image of docker') {
             steps{
                 bat 'docker build -t image_jenkins .'
