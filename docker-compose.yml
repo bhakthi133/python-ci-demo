@@ -1,8 +1,12 @@
+#docker build -t calci3 .
+#docker run -it --name cal_cont_by_yml -e ENVIRONMENT=development -v cal_val:/data --network mynetwork calci3 
 services:
   calculator:
     build: .
-    image: calci
+    image: calci3
     container_name: cal_cont_by_yml
+    stdin_open: true
+    tty: true
     environment:
       - ENVIRONMENT=development
     volumes:
@@ -10,6 +14,7 @@ services:
     networks: 
       - my_network
     command: python calculator.py
+  # wna to define them here so that we can use them in other sservices as well , reusability
 volumes:
   cal_val:
 networks:
