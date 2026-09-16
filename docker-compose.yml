@@ -1,0 +1,17 @@
+services:
+  calculator:
+    build: .
+    image: calci
+    container_name: cal_cont_by_yml
+    environment:
+      - ENVIRONMENT=development
+    volumes:
+      - cal_val:/data
+    networks: 
+      - my_network
+    command: python calculator.py
+Volumes:
+  cal_val:
+Networks:
+  my_networks:
+
