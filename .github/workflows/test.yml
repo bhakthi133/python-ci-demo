@@ -3,7 +3,7 @@ on:
   push:
   pull_request:
   schedule:
-    -cron: "0 2 * * *"   //ist = utc + 5:30 ie,ist=7:30 am
+    - cron: "0 2 * * *"   //ist = utc + 5:30 ie,ist=7:30 am
 jobs:
   test:
     runs-on: ubuntu-latest
