@@ -14,6 +14,13 @@ services:
     networks: 
       - my_network
     command: python calculator.py
+    depends_on:
+      - redis
+  redis:
+    image: redis:7
+    container_name: redis_server
+    networks:
+      - my_network
   # wna to define them here so that we can use them in other sservices as well , reusability
 volumes:
   cal_val:
