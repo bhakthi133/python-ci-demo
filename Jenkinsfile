@@ -29,7 +29,19 @@ pipeline {
                 bat 'python -m pytest'
             }
         }
+        stage('Docker agent stage') {
+            agent{
+                docker{
+                    image 'python:3.12'
+                }
+            }
+            steps{
+                sh 'python --version'
+                sh 'python -m pip install pytest'
+                sh 'python -m pytest'
 
+            }
+        }        
         stage('Build image of docker') {
             steps{
                 bat 'docker build -t image_jenkins .'
