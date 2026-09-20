@@ -41,8 +41,8 @@ pipeline {
     steps {
         bat '''
         echo Testing Java directly...
-        java -version
-        java -cp . DockerTest
+        javac DockerTest.java
+        java DockerTest
         '''
     }
 }
