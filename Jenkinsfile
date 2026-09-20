@@ -33,6 +33,8 @@ pipeline {
             steps {
                 bat 'docker --version'
                 bat 'docker info'
+                bat 'where docker'
+                bat 'echo %PATH%'
             }
         }
         
