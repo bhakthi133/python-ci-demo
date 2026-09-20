@@ -29,23 +29,6 @@ pipeline {
                 bat 'python -m pytest'
             }
         }
-        stage('Check Docker') {
-            steps {
-                bat 'docker --version'
-                bat 'docker info'
-                bat 'where docker'
-                bat 'echo %PATH%'
-            }
-        }
-        stage('Test Docker Java Launch') {
-    steps {
-        bat '''
-        echo Testing Java directly...
-        javac DockerTest.java
-        java DockerTest
-        '''
-    }
-}
         
         stage('Docker agent stage') {
             agent{
