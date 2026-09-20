@@ -37,6 +37,14 @@ pipeline {
                 bat 'echo %PATH%'
             }
         }
+        stage('Test Docker from Java') {
+    steps {
+        script {
+            println "Java PATH = " + System.getenv("PATH")
+            println "Java OS = " + System.getProperty("os.name")
+        }
+    }
+}
         
         stage('Docker agent stage') {
             agent{
