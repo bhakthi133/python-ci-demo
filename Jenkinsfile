@@ -35,8 +35,8 @@ pipeline {
             }
             steps {
             sh 'python3 --version'
-            sh 'python3 -m pip install --user pytest'
-            sh 'python3 -m pytest'
+            sh 'HOME=/tmp python3 -m pip install --user pytest'
+            sh 'HOME=/tmp python3 -m pytest'
             }
         }
 
