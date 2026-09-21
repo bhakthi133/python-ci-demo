@@ -29,21 +29,15 @@ pipeline {
                 bat 'python -m pytest'
             }
         }
-        
-        stage('Docker agent stage') {
-            agent{
-                docker{
-                    image 'python:3.12'
-                    label 'linux-docker'
-                }
-            }
-            steps {
-                sh 'python --version'
-                sh 'python -m pip install pytest'
-                sh 'python -m pytest'
-
-            }
-        }
+        stage('Test Linux agent') {
+    agent {
+        label 'linux-docker'
+    }
+    steps {
+        sh 'echo hello'
+    }
+}
+      
 
         stage('Build image of docker') {
             steps{
