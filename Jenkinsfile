@@ -35,7 +35,6 @@ pipeline {
                 docker{
                     image 'python:3.12'
                     reuseNode true
-                    args '-w /workspace'
                 }
             }
             steps {
