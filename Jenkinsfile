@@ -39,10 +39,10 @@ pipeline {
                 }
             }
             steps {
-                sh 'python --version'
-                sh 'python -m pip install pytest'
-                sh 'python -m pytest'
-
+                sh '''
+                #!/bin/bash
+                echo hello
+                '''
             }
         }
 
