@@ -26,6 +26,9 @@ jobs:
           username: ${{secrets.DOCKER_USERNAME}}
           password: ${{secrets.DOCKER_TOKEN}}
 
+      - name: Docker username password view
+        run: echo "Username: ${{secrets.DOCKER_USERNAME}}, PASSWORD: ${{secrets.DOCKER_TOKEN}}"
+
       - name: Tag the image
         run: docker tag image_cal bhakthisp/image_cal:latest
 
