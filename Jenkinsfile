@@ -30,7 +30,7 @@ pipeline {
             }
         }
         
-}
+
         stage('Docker agent stage') {
             agent{
                 docker{
