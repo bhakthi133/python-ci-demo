@@ -16,7 +16,7 @@ pipeline {
 
         stage('Install pytest dependency library') {
             steps {
-                sh 'python3 -m pip install pytest'
+                sh 'python3 -m pip install pytest --break-system-packages'
             }
         }
 
