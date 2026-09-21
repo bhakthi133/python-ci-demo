@@ -34,10 +34,9 @@ pipeline {
                 }
             }
             steps {
-                sh '''
-                #!/bin/bash
-                echo hello
-                '''
+            sh 'python3 --version'
+            sh 'python3 -m pip install pytest'
+            sh 'python3 -m pytest'
             }
         }
 
