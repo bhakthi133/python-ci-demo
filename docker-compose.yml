@@ -4,7 +4,7 @@ services:
   calculator:
     build: .
     image: calci3
-    container_name: cal_cont_by_yml
+    container_name: compose_cal_container
     stdin_open: true
     tty: true
     environment:
@@ -18,7 +18,7 @@ services:
       - redis
   redis:
     image: redis:7
-    container_name: redis_server
+    container_name: redis_server_container
     networks:
       - my_network
   # wna to define them here so that we can use them in other sservices as well , reusability
