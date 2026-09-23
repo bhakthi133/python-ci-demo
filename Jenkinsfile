@@ -25,6 +25,11 @@ pipeline {
                 sh 'python3 -m pytest'
             }
         }
+        stage('Run Docker Compose') {
+    steps {
+        sh 'docker compose up -d'
+    }
+}
         
 
         stage('Docker agent stage') {
